@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:scoped_model/scoped_model.dart';
-
 import 'package:mad_final/scopedmodel/todo_list_model.dart';
 import 'package:mad_final/model/task_model.dart';
 import 'package:mad_final/component/iconpicker/icon_picker_builder.dart';
@@ -38,7 +37,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
       builder: (BuildContext context, Widget child, TodoListModel model) {
         return Scaffold(
           key: _scaffoldKey,
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.black87,
           appBar: AppBar(
             title: Text(
               'New Category',

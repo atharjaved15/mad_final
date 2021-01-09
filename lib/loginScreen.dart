@@ -31,81 +31,101 @@ class loginScreen extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.black87,
           body: Center(
             child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-
-                  Text('Login & SignUP Screen' , style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),),
+                  SizedBox(height: 50,),
+                  Text('Login & SignUP Screen' , style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold, color: Colors.white),),
+                  SizedBox(height: 20,),
+                  Text('Enter LogIn or SignUp Details' , style: TextStyle(color: Colors.white, fontSize: 20),),
                   SizedBox(
-                    height: 100,
+                    height: 70,
                   ),
                   Container(
-
                     child: SingleChildScrollView(
                       child: Container(
-                        alignment: Alignment.topCenter,
-                        margin: EdgeInsets.symmetric(horizontal: 30),
+                        margin: EdgeInsets.only(top: 20),
                         child: Center(
                           child: SingleChildScrollView(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                Text('Enter E-Mail'),
-                                TextField(
-                                  controller: nameController,
-                                  decoration: InputDecoration(
-                                    focusColor: Colors.blue,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: <Widget>[
+                                  icon_data(),
+                                  SizedBox(height: 20,),
+                                  Container(
+                                    color: Colors.white,
+                                    child: TextField(
+                                      controller: nameController,
+                                      decoration: InputDecoration(
+                                        icon: Icon(
+                                          Icons.email,
+                                          color: Colors.black,
+                                        ),
+                                        labelText: 'Email',
+                                        focusColor: Colors.black,
 
+                                      ),
+                                      cursorColor: Colors.red,
+                                      cursorHeight:20,
+                                    ),
                                   ),
-                                  cursorColor: Colors.red,
-                                  cursorHeight:20,
-                                ),
-                                SizedBox(
-                                  height: 30,
-                                ),
-                                Text('Enter Password'),
-                                TextField(
-                                  controller: passwordController,
-                                  decoration: InputDecoration(
-                                    focusColor: Colors.blue,
-
+                                  SizedBox(
+                                    height: 30,
                                   ),
-                                  cursorColor: Colors.red,
-                                  obscureText: true,
-                                  cursorHeight:20,
-                                ),
-                                SizedBox(
-                                  height: 100,
-                                ),
-                                MaterialButton(
-                                  elevation: 0,
-                                  minWidth: double.maxFinite,
-                                  height: 50,
-                                  onPressed: () => logIn(context),
-                                  color: logoColor,
-                                  child: Text('Login',
-                                      style: TextStyle(color: Colors.white, fontSize: 16)),
-                                  textColor: Colors.white,
-                                ),
-                                SizedBox(height: 20),
-                                MaterialButton(
-                                  elevation: 0,
-                                  minWidth: double.maxFinite,
-                                  height: 50,
-                                  onPressed: () => registerUser(context),
-                                  color: Colors.blue,
-                                  child: Text('Register',
-                                      style: TextStyle(color: Colors.white, fontSize: 16)),
-                                  textColor: Colors.white,
-                                ),
-                                SizedBox(height: 20),
-                                SizedBox(height: 100),
+                                  Container(
+                                    color: Colors.white,
 
-                              ],
+                                    child: TextField(
+                                      controller: passwordController,
+                                      decoration: InputDecoration(
+                                        fillColor: Colors.white,
+                                        labelText: 'Password',
+                                        focusColor: Colors.black,
+                                        icon: Icon(
+                                          Icons.lock,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                      cursorColor: Colors.red,
+                                      obscureText: true,
+                                      cursorHeight:20,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 100,
+                                  ),
+                                  MaterialButton(
+                                    elevation: 0,
+                                    minWidth: double.maxFinite,
+                                    height: 50,
+                                    onPressed: () => logIn(context),
+                                    color: logoColor,
+                                    child: Text('Login',
+                                        style: TextStyle(color: Colors.white, fontSize: 16)),
+                                    textColor: Colors.white,
+                                  ),
+                                  SizedBox(height: 20),
+                                  MaterialButton(
+                                    elevation: 0,
+                                    minWidth: double.maxFinite,
+                                    height: 50,
+                                    onPressed: () => registerUser(context),
+                                    color: Colors.blue,
+                                    child: Text('Register',
+                                        style: TextStyle(color: Colors.white, fontSize: 16)),
+                                    textColor: Colors.white,
+                                  ),
+                                  SizedBox(height: 20),
+                                  SizedBox(height: 100),
+
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -120,7 +140,7 @@ class loginScreen extends StatelessWidget {
           )),
     );
   }
-  /*_buildFooterLogo() {
+  icon_data() {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 20),
       child: Column(
@@ -128,8 +148,7 @@ class loginScreen extends StatelessWidget {
         children: <Widget>[
           Image.asset(
             'images/logo.png',
-            height: 40,
-            color: Colors.white,
+            height: 140,
           ),
           SizedBox(
             width: 10,
@@ -137,7 +156,7 @@ class loginScreen extends StatelessWidget {
         ],
       ),
     );
-  }*/
+  }
   /*_buildTextField(TextEditingController controller, IconData icon, String labelText) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),

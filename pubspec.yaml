@@ -55,7 +55,6 @@ dependencies:
   firebase_analytics: any
   flutter_markdown: any
 
-
 dev_dependencies:
   flutter_test:
     sdk: flutter

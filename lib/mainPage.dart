@@ -13,9 +13,6 @@ import 'package:mad_final/page/detail_screen.dart';
 import 'package:mad_final/component/todo_badge.dart';
 import 'package:mad_final/page/privacy_policy.dart';
 import 'package:mad_final/model/data/choice_card.dart';
-
-
-
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
