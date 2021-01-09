@@ -22,11 +22,15 @@ if (flutterVersionName == null) {
 }
 
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
     compileSdkVersion 29
+    defaultConfig{
+        multiDexEnabled true
+    }
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -43,6 +47,13 @@ android {
         targetSdkVersion 29
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+    }
+    dependencies {
+        // Import the Firebase BoM
+        implementation platform('com.google.firebase:firebase-bom:26.2.0')
+
+        // Add the dependencies for the desired Firebase products
+        // https://firebase.google.com/docs/android/setup#available-libraries
     }
 
     buildTypes {
